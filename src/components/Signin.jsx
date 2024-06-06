@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -96,6 +97,10 @@ function Signin() {
             setFormValid(false);
         }
       }
+  };
+
+  const navigateToRegister = () => {
+    navigate("/register");
   };
 
   return (
@@ -200,7 +205,7 @@ function Signin() {
 
           <div className="mt-6 flex items-center justify-end gap-x-6">
                 Don't have an account?
-                <a href="/register" className="text-blue-600 underline">Register here</a>
+                <a onClick={navigateToRegister} className="text-blue-600 underline">Register here</a>
           </div>
         </div>
       </div>

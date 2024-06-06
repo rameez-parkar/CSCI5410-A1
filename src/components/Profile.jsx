@@ -1,8 +1,11 @@
 import { useSearchParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Profile() {
+  const navigate = useNavigate();
+
   const [searchParams] = useSearchParams();
   const email = searchParams.get("email");
   const [firstName, setFirstName] = useState("");
@@ -22,6 +25,10 @@ function Profile() {
     }
   });
    });
+
+   const navigatetoUpload = () => {
+    navigate("/uploadprofilepic");
+   };
   
 
   return (
@@ -81,7 +88,7 @@ function Profile() {
         </div>
 
         <div className="mt-6 flex items-center justify-end gap-x-6">
-                <a href="/uploadprofilepic" className="text-blue-600 underline">Upload Profile Pic</a>
+                <a onClick={navigatetoUpload} className="text-blue-600 underline">Upload Profile Pic</a>
         </div>
       </div>
     </div>}
