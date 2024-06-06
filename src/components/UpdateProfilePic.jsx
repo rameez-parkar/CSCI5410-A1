@@ -1,10 +1,7 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function UpdateProfilePic() {
-  const navigate = useNavigate();
-
   const [selectedFile, setSelectedFile] = useState(null);
   const [formValid, setFormValid] = useState(false);
 
